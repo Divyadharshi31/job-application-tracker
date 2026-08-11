@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Job Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #1f2937;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            margin: 40px auto;
+        }
+
+        .form-box {
+            background-color: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 13px 22px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 18px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>💼 Add Job Application</h1>
+        <p>Enter the details of your job application</p>
+    </div>
+
+    <!-- Form Container -->
+    <div class="container">
+
+        <div class="form-box">
+
+            <!-- IMPORTANT: method POST and action /add -->
+            <form method="POST" action="/add">
+
+                <!-- Company Name -->
+                <label for="company">Company Name</label>
+                <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Example: TCS"
+                    required
+                >
+
+                <!-- Job Role -->
+                <label for="role">Job Role</label>
+                <input
+                    type="text"
+                    id="role"
+                    name="role"
+                    placeholder="Example: Software Developer"
+                    required
+                >
+
+                <!-- Application Date -->
+                <label for="app_date">Application Date</label>
+                <input
+                    type="date"
+                    id="app_date"
+                    name="app_date"
+                    required
+                >
+
+                <!-- Application Status -->
+                <label for="status">Application Status</label>
+                <select id="status" name="status" required>
+
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Selected">Selected</option>
+                    <option value="Rejected">Rejected</option>
+
+                </select>
+
+                <!-- Job Location -->
+                <label for="location">Job Location</label>
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Example: Chennai"
+                >
+
+                <!-- Notes -->
+                <label for="notes">Notes</label>
+                <textarea
+                    id="notes"
+                    name="notes"
+                    placeholder="Add any notes about this application"
+                ></textarea>
+
+                <!-- Submit -->
+                <button type="submit">
+                    Save Application
+                </button>
+
+            </form>
+
+            <!-- Back to Dashboard -->
+            <a href="/" class="back">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
